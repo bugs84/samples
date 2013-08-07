@@ -1,0 +1,4 @@
+syntax: glob
+MavenCompileGroovyAndJava/.idea
+*.iml
+MavenCompileGroovyAndJava/target
