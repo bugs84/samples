@@ -23,18 +23,17 @@ class XmlExamplesCl {
 def rootNode = new XmlParser().parseText(XmlExamplesCl.CAR_RECORDS)
 
 //Select
-println rootNode.car[0].attributes()
-println rootNode.car[0].'@year'
+assert rootNode.car[0].attributes() == [name:'HSV Maloo', make:'Holden', year:'2006']
+assert rootNode.car[0].@year == '2006'
+assert rootNode.'car'[0].'@year' == '2006'
 
 //findAllSearch all direct childrens
 def cars = rootNode.findAll {it.name() == 'car'}
-println cars.size()
+assert cars.size() == 3
 
 //breadthFirst() or depthFirst() find
 def countries = rootNode.depthFirst().grep {it.name() == 'country'}
-countries.each {print it.text() + ", "}
-String
-println ""
+assert countries.collect {it.text()} == ['Australia', 'Isle of Man', 'France']
 
 //addNode
 rootNode.append(new Node(null, "MyNode1", "Node Value 1 - null if nothing"))
