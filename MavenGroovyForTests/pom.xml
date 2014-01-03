@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cz.vondrsoft</groupId>
+    <artifactId>GroovyTests</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>2.1.6</version>
+            <scope>test</scope>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>commons-cli</groupId>-->
+            <!--<artifactId>commons-cli</artifactId>-->
+            <!--<version>1.2</version>-->
+            <!--<scope>test</scope>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <!--<pluginManagement>-->
+            <!--<plugins>-->
+                <!--<plugin>-->
+                    <!--<groupId>org.apache.maven.plugins</groupId>-->
+                    <!--<artifactId>maven-compiler-plugin</artifactId>-->
+                    <!--<version>3.1</version>-->
+                    <!--<configuration>-->
+                        <!--&lt;!&ndash; put your configurations here &ndash;&gt;-->
+                    <!--</configuration>-->
+                <!--</plugin>-->
+            <!--</plugins>-->
+        <!--</pluginManagement>-->
+
+        <plugins>
+            <!--<plugin>-->
+              <!--<groupId>org.codehaus.mojo</groupId>-->
+              <!--<artifactId>build-helper-maven-plugin</artifactId>-->
+              <!--<version>1.5</version>-->
+              <!--<executions>-->
+                <!--<execution>-->
+                  <!--<id>add-source</id>-->
+                  <!--<phase>generate-sources</phase>-->
+                  <!--<goals>-->
+                    <!--<goal>add-source</goal>-->
+                  <!--</goals>-->
+                  <!--<configuration>-->
+                    <!--<sources>-->
+                      <!--&lt;!&ndash;<source>src/main/groovy</source>&ndash;&gt;-->
+                      <!--<source>**/*.groovy</source>-->
+                    <!--</sources>-->
+                  <!--</configuration>-->
+                <!--</execution>-->
+                <!--<execution>-->
+                  <!--<id>add-test-source</id>-->
+                  <!--<phase>generate-test-sources</phase>-->
+                  <!--<goals>-->
+                    <!--<goal>add-test-source</goal>-->
+                  <!--</goals>-->
+                  <!--<configuration>-->
+                    <!--<sources>-->
+                      <!--&lt;!&ndash;<source>src/test/groovy</source>&ndash;&gt;-->
+                      <!--<source>**/*.groovy</source>-->
+                    <!--</sources>-->
+                  <!--</configuration>-->
+                <!--</execution>-->
+              <!--</executions>-->
+            <!--</plugin>-->
+
+
+
+
+
+
+
+
+
+            <!-- TOHLE VICEMENE FUNGUJE !!!!!!!  jen se musi vzdy davat clean install :( -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.0</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <compilerId>groovy-eclipse-compiler</compilerId>
+                    <verbose>true</verbose>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.codehaus.groovy</groupId>
+                        <artifactId>groovy-eclipse-compiler</artifactId>
+                        <version>2.7.0-01</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>2.9</version>
+                <configuration>
+                    <additionalProjectnatures>
+                        <projectnature>org.eclipse.jdt.groovy.core.groovyNature</projectnature>
+                    </additionalProjectnatures>
+                    <sourceIncludes>
+                        <sourceInclude>**/*.groovy</sourceInclude>
+                    </sourceIncludes>
+                </configuration>
+            </plugin>
+
+
+
+
+            <!--http://stackoverflow.com/questions/2199547/maven-compile-mixed-java-groovy-1-7-project-using-gmaven-plugin-->
+            <!--<plugin>-->
+                 <!--<groupId>org.codehaus.gmaven</groupId>-->
+                 <!--<artifactId>gmaven-plugin</artifactId>-->
+                 <!--<version>1.2</version>-->
+                 <!--<configuration>-->
+                   <!--<providerSelection>1.7</providerSelection>-->
+                 <!--</configuration>-->
+                 <!--<dependencies>-->
+                     <!--<dependency>-->
+                       <!--<groupId>org.codehaus.gmaven.runtime</groupId>-->
+                       <!--<artifactId>gmaven-runtime-1.7</artifactId>-->
+                       <!--<version>1.2</version>-->
+                       <!--<exclusions>-->
+                         <!--<exclusion>-->
+                           <!--<groupId>org.codehaus.groovy</groupId>-->
+                           <!--<artifactId>groovy-all</artifactId>-->
+                         <!--</exclusion>-->
+                       <!--</exclusions>-->
+                     <!--</dependency>-->
+                     <!--<dependency>-->
+                       <!--<groupId>org.codehaus.groovy</groupId>-->
+                       <!--<artifactId>groovy-all</artifactId>-->
+                       <!--<version>1.7.0</version>-->
+                     <!--</dependency>-->
+                 <!--</dependencies>-->
+                 <!--<executions>-->
+                     <!--<execution>-->
+                         <!--<goals>-->
+                             <!--<goal>generateStubs</goal>-->
+                             <!--<goal>compile</goal>-->
+                             <!--<goal>generateTestStubs</goal>-->
+                             <!--<goal>testCompile</goal>-->
+                         <!--</goals>-->
+                     <!--</execution>-->
+                 <!--</executions>-->
+             <!--</plugin>-->
+
+
+
+
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-compiler-plugin</artifactId>-->
+                <!--<configuration>-->
+                    <!--<source>1.5</source>-->
+                    <!--<target>1.5</target>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
+
+        </plugins>
+    </build>
+</project>

@@ -4,3 +4,8 @@ MavenCompileGroovyAndJava/.idea
 MavenCompileGroovyAndJava/target
 GroovyExamples/target
 GroovyExamples/.idea
+MavenGroovyForTests/.idea/
+MavenGroovyForTests/.settings/org.eclipse.jdt.core.prefs
+MavenGroovyForTests/.classpath
+MavenGroovyForTests/.project
+MavenGroovyForTests/target/
