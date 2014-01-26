@@ -15,7 +15,7 @@ Spread 	            *. 	    Used to invoke an action on all items of an aggregat
 Spread Java Field 	*.@ 	Amalgamation of the above two
 Method Reference 	.&  	Get a reference to a method, can be useful for creating closures from methods
 asType Operator 	as 	    Used for groovy casting, coercing one type to another.
-Membership Operator 	    in 	Can be used as replacement for collection.contains()
+Membership Operator in      Can be used as replacement for collection.contains()
 Identity Operator 	is  	Identity check. Since == is overridden in Groovy with the meaning of equality we need some fallback to check for object identity.
 Safe Navigation 	?. 	    returns nulls instead of throwing NullPointerExceptions
 Elvis Operator  	?:   	Shorter ternary operator
@@ -73,3 +73,8 @@ Matcher matcher = "cheesecheese" =~ /cheese/
 def cheese = ("cheesecheese" =~ /cheese/).replaceFirst("nice")
 assert cheese == "nicecheese"
 int i = 0;
+
+
+//.& operator - method pointer
+def err = System.err.&println
+err "Usage of .& operator"
