@@ -10,14 +10,14 @@ import static org.junit.Assert.assertThat;
 
 public class NamesTest {
 
-    List<String> names = new ArrayList<String>(){{
+    List<String> names = new ArrayList<String>() {{
         add("Pepa");
         add("Ferda");
         add("Ludmila");
     }};
 
     @Test
-    public void namesContainsFerda(){
+    public void namesContainsFerda() {
         assertThat(names, hasItem("Ferda"));
     }
 }

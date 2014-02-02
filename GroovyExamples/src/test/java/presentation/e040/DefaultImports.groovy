@@ -6,7 +6,7 @@ import java.awt.BorderLayout
 //java.lang, java.util, java.io, java.net
 
 //java.lang
-assert 2 == Math.max(1,2)
+assert 2 == Math.max(1, 2)
 
 //java.util
 assert 10 > new Random().nextInt(10)

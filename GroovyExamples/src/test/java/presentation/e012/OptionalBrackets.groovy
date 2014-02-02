@@ -1,11 +1,10 @@
 String createHello(String name, String surname) {
-   "Hello $surname, $name"
+    "Hello $name $surname"
 }
 
 def john = createHello("John", "Black")
+//Zavorky jdou vynechat
 def carl = createHello "Carl", "Brown"
-def alan = createHello surname: "White", name: "Alan"
 
-assert "Hello Black, John" == john
-assert "Hello Brown, Carl" == carl
-assert "Hello White, Alan" == alan
+assert "Hello John Black" == john
+assert "Hello Carl Brown" == carl
