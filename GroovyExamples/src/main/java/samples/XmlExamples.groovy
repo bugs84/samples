@@ -1,21 +1,21 @@
 package samples
 class XmlExamplesCl {
-    static def CAR_RECORDS = '''
-    <records>
-      <car name='HSV Maloo' make='Holden' year='2006'>
-        <country>Australia</country>
-        <countries type='speed'>Production Pickup Truck with speed of 271kph</countries>
-      </car>
-      <car name='P50' make='Peel' year='1962'>
-        <country>Isle of Man</country>
-        <countries type='size'>Smallest Street-Legal Car at 99cm wide and 59 kg in weight</countries>
-      </car>
-      <car name='Royale' make='Bugatti' year='1931'>
-        <country>France</country>
-        <countries type='price'>Most Valuable Car at $15 million</countries>
-      </car>
-    </records>
-  '''
+    static def CAR_RECORDS = '''\
+<records>
+  <car name='HSV Maloo' make='Holden' year='2006'>
+    <country>Australia</country>
+    <countries type='speed'>Production Pickup Truck with speed of 271kph</countries>
+  </car>
+  <car name='P50' make='Peel' year='1962'>
+    <country>Isle of Man</country>
+    <countries type='size'>Smallest Street-Legal Car at 99cm wide and 59 kg in weight</countries>
+  </car>
+  <car name='Royale' make='Bugatti' year='1931'>
+    <country>France</country>
+    <countries type='price'>Most Valuable Car at $15 million</countries>
+  </car>
+</records>
+'''
 }
 
 
