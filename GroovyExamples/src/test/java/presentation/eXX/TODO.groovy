@@ -9,10 +9,16 @@ package presentation.eXX
 //pretypovani
 //iterace
 //Stringy - ',  ", ''', Vkladani promennych
+//Looping - 10.times  (1..10).each ...
+
 
 //Equals je defaultni dane na ==, identita je dana na is()
 
 
 //ASSERTY jake jsou krasneeee
 //DefaultniParametry metod
+
+
+
+//http://groovy.codehaus.org/GroovyMarkup
 
