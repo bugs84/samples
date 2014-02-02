@@ -1,4 +1,4 @@
-package samples
+//Pretizeni operatoru
 
 assert 4 == 2 + 2
 assert -4 == -2 + -2
