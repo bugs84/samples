@@ -1,3 +1,5 @@
+//Asserty jsou prekrasne a chyby, ktere vraci jsou jeste hezci!
+
 assert 1 + 1 == 2
 assert 1 + 1 == 2, "This error message is written when assertion fail"
 assert 1 + 1 == 2: "This error message is written when assertion fail"
