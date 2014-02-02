@@ -6,13 +6,11 @@ package presentation.eXX
 //WORK with file
 //XML
 //BUILDER
-//pretypovani
+//pretypovani  [] as LinkedHashMap
+
+//with
 
 
-
-//Equals je defaultni dane na ==, identita je dana na is()
-
-//DefaultniParametry metod
 
 
 
