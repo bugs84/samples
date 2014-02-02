@@ -7,6 +7,8 @@ package presentation.eXX
 //XML
 //BUILDER
 //pretypovani  [] as LinkedHashMap
+// pole, listy, mapy, mnoziny . supr zapisy, supr closury
+
 
 //with
 
