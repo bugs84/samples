@@ -1,0 +1,71 @@
+group 'cz.vondr'
+version '1.0-SNAPSHOT'
+
+import org.apache.commons.io.FileUtils
+import org.zeroturnaround.zip.ZipUtil
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.zeroturnaround:zt-zip:1.9'
+        classpath 'org.apache.commons:commons-io:1.3.2'
+    }
+}
+
+task updateFileInsideZipFile << {
+    extractZipAndThenPackItBack(new File("$projectDir/Zip.zip")) { File zip ->
+        File numberFile = new File(zip, "Number.txt")
+        numberFile.text = numberFile.text.toInteger() + 1
+    }
+}
+tasks.updateFileInsideZipFile.description = "Increase number in file Zip.zip/Number.txt"
+
+task updateFileInsideZipInsideZipInsideZip << {
+    extractZipAndThenPackItBack(new File("$projectDir/Zip.zip")) { File zip ->
+        extractZipAndThenPackItBack(new File(zip, "Inner1.zip")) { File inner1 ->
+            extractZipAndThenPackItBack(new File(inner1, "Inner2.zip")) { File inner2 ->
+                File innerFile = new File(inner2, "Inner.txt")
+                innerFile.text = innerFile.text.toInteger() + 1
+            }
+        }
+    }
+}
+tasks.updateFileInsideZipInsideZipInsideZip.description = "Increase number in file Zip.zip/Inner1.zip/Inner2.zip/Inner.txt"
+
+/**
+ *
+ * Extract zipFile into directory in temp, then call closure and give this directory as parameter to closure
+ * (closure update this directory), then pack this directory back into ZipFile
+ *  Nice method :) */
+private void extractZipAndThenPackItBack(File zipFile, Closure closure) {
+    def extractedDirectory
+    try {
+        //Extract
+        extractedDirectory = getTempDir()
+        ZipUtil.unpack(zipFile, extractedDirectory);
+
+        //Call closure
+        closure.call(extractedDirectory)
+        //Pack result back
+        zipFile.delete()
+        ZipUtil.pack(extractedDirectory, zipFile);
+    } finally {
+        FileUtils.deleteDirectory(extractedDirectory)
+    }
+}
+
+private File getTempDir() {
+    def tmpDir = File.createTempFile("NSI_", "_tomcat_update")
+    tmpDir.delete()
+    tmpDir.mkdir()
+    tmpDir
+}
+
+
+////----------------------------
+////Sample usage:
+//extractZipAndThenPackItBack(zipFile) { File directoryWhereZipWasExtracted ->
+//    //update directory where zip was extracted
+//}
