@@ -9,3 +9,10 @@ MavenGroovyForTests/.settings/org.eclipse.jdt.core.prefs
 MavenGroovyForTests/.classpath
 MavenGroovyForTests/.project
 MavenGroovyForTests/target/
+ZipUpdaterGroovyGradleClosure/.gradle/
+ZipUpdaterGroovyGradleClosure/.idea/copyright/profiles_settings.xml
+ZipUpdaterGroovyGradleClosure/.idea/
+RunGroovyProjectWithoutCompilationUsingGradle/.idea
+RunGroovyProjectWithoutCompilationUsingGradle/.gradle/
+RunGroovyProjectWithoutCompilationUsingGradle/buildSrc/.gradle/
+RunGroovyProjectWithoutCompilationUsingGradle/buildSrc/build/
