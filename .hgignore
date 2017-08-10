@@ -16,3 +16,6 @@ RunGroovyProjectWithoutCompilationUsingGradle/.idea
 RunGroovyProjectWithoutCompilationUsingGradle/.gradle/
 RunGroovyProjectWithoutCompilationUsingGradle/buildSrc/.gradle/
 RunGroovyProjectWithoutCompilationUsingGradle/buildSrc/build/
+groovy-course/.gradle/
+groovy-course/.idea/
+groovy-course/out/
