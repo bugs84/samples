@@ -9,10 +9,10 @@ class C07_Lists {
     void "create getter setter"() {
         List<Integer> list = [5, 6, 7]
 
-        //get
+        //get item
         assert list[0] == 5
 
-        //set
+        //set item
         list[0] = 8
         assert list == [8, 6, 7]
 
