@@ -1,4 +1,5 @@
 package samples
+
 class XmlExamplesCl {
     static def CAR_RECORDS = '''\
 <records>
@@ -45,3 +46,12 @@ new XmlNodePrinter(new PrintWriter(writer)).print(rootNode)
 def modifiedXml = writer.toString()
 println modifiedXml
 
+//Alternative for writing into Xml
+//import groovy.util.slurpersupport.Node
+//import groovy.util.slurpersupport.NodeChild
+//String toXml(Node node) {
+//    return toXml(new NodeChild(node, null, null))
+//}
+//String toXml(NodeChild node) {
+//    return XmlUtil.serialize(node)
+//}
