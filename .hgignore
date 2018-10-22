@@ -1,21 +1,19 @@
 syntax: glob
-MavenCompileGroovyAndJava/.idea
 *.iml
 MavenCompileGroovyAndJava/target
 GroovyExamples/target
 GroovyExamples/.idea
-MavenGroovyForTests/.idea/
 MavenGroovyForTests/.settings/org.eclipse.jdt.core.prefs
 MavenGroovyForTests/.classpath
 MavenGroovyForTests/.project
 MavenGroovyForTests/target/
-ZipUpdaterGroovyGradleClosure/.gradle/
 ZipUpdaterGroovyGradleClosure/.idea/copyright/profiles_settings.xml
 ZipUpdaterGroovyGradleClosure/.idea/
-RunGroovyProjectWithoutCompilationUsingGradle/.idea
 RunGroovyProjectWithoutCompilationUsingGradle/.gradle/
-RunGroovyProjectWithoutCompilationUsingGradle/buildSrc/.gradle/
 RunGroovyProjectWithoutCompilationUsingGradle/buildSrc/build/
-groovy-course/.gradle/
 groovy-course/.idea/
 groovy-course/out/
+.idea/
+.gradle/
+classes/
+build/

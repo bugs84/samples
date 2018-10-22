@@ -1,0 +1,4 @@
+rootProject.name = 'kotlin-groovy-closures'
+include 'kotlin-module'
+include 'groovy-module'
+
