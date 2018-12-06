@@ -40,6 +40,7 @@ class SamplesKotlin {
         ))
     }
 
+
     @Test
     fun `Groovy eachWithIndex vs Kotlin forEachIndexed`() {
         var result = ""
@@ -48,12 +49,30 @@ class SamplesKotlin {
         }
         assertThat(result).isEqualTo("0:A, 1:B, ")
     }
-    
+
+    @Test
+    fun `Groovy collect vs Kotlin map`() {
+        val result = listOf(1, 2, 3).map { "S-" + it }
+        assertThat(result).isEqualTo(listOf("S-1", "S-2", "S-3"))
+
+    }
+
+
+//    @Test
+//    void "Groovy collect vs Kotlin map"() {
+//        List<String> result = [1, 2, 3].collect { "S-" + it }
+//        assert result == ["S-1", "S-2", "S-3"]
+//    }
+
     @Test
     fun `just for testing purpose`() {
-        listOf(0, 10).forEachIndexed { index, element ->
-            // ...
-        }
+        
+    }
+
+    @Test
+    fun `just for testing purpose2`() {
+        println(listOf(1, 2, 4, 3).first { it >= 2 })
+        println(listOf(1, 2, 4, 3).find { it >= 2 })
     }
 
 

@@ -40,6 +40,12 @@ class SamplesGroovy {
         assert result == "0:A, 1:B, "
     }
 
+    @Test
+    void "Groovy collect vs Kotlin map"() {
+        List<String> result = [1, 2, 3].collect { "S-" + it }
+        assert result == ["S-1", "S-2", "S-3"]
+    }
+
 
     @Test
     void "just for testing purpose"() {
