@@ -1,5 +1,6 @@
 package cz.vondr
 
+
 import org.junit.Test
 
 class SamplesGroovy {
@@ -46,13 +47,44 @@ class SamplesGroovy {
         assert result == ["S-1", "S-2", "S-3"]
     }
 
+    @Test
+    void "Groovy with vs Kotlin run"() {
+        assert "string".with {
+            length()
+        } == 6
+    }
 
     @Test
-    void "just for testing purpose"() {
-        def sum = 0
-        [1, 2, 3].each { sum += it }
-        assert sum == 6
+    void "Groovy with vs Kotlin run - scope"() {
+        assert with {
+            "AAA"
+        } == "AAA"
     }
+
+    @Test
+    void "Groovy with vs Kotlin let"() {
+        assert "string".with {
+            it.length()
+        } == 6
+    }
+
+    @Test
+    void "Groovy with vs Kotlin apply"() {
+        assert "string".with {
+            println length()
+            it //  :-/
+        } == "string"
+    }
+
+    @Test
+    void "Groovy with vs Kotlin also"() {
+        assert "string".with {
+            println it.length()
+            it //  :-/
+        } == "string"
+    }
+
+
 
     //Tips
 //    List	dropWhile(Closure condition)

@@ -33,11 +33,12 @@ class SamplesKotlin {
     @Test
     fun `Groovy groupBy vs Kotlin groupBy`() {
         val groupBy: Map<Int, List<Int>> = listOf(1, 2, 3, 4, 5, 6, 7).groupBy { it % 3 }
-        assertThat(groupBy).isEqualTo(mapOf(
-                0 to listOf(3, 6),
-                1 to listOf(1, 4, 7),
-                2 to listOf(2, 5)
-        ))
+        assertThat(groupBy).isEqualTo(
+                mapOf(
+                        0 to listOf(3, 6),
+                        1 to listOf(1, 4, 7),
+                        2 to listOf(2, 5)
+                ))
     }
 
 
@@ -54,26 +55,54 @@ class SamplesKotlin {
     fun `Groovy collect vs Kotlin map`() {
         val result = listOf(1, 2, 3).map { "S-" + it }
         assertThat(result).isEqualTo(listOf("S-1", "S-2", "S-3"))
-
     }
 
 
-//    @Test
-//    void "Groovy collect vs Kotlin map"() {
-//        List<String> result = [1, 2, 3].collect { "S-" + it }
-//        assert result == ["S-1", "S-2", "S-3"]
-//    }
-
     @Test
-    fun `just for testing purpose`() {
-        
+    fun `Groovy with vs Kotlin run`() {
+        assertThat(
+                "string".run {
+                    length
+                }
+        ).isEqualTo(6)
     }
 
     @Test
-    fun `just for testing purpose2`() {
-        println(listOf(1, 2, 4, 3).first { it >= 2 })
-        println(listOf(1, 2, 4, 3).find { it >= 2 })
+    fun `Groovy with vs Kotlin run - scope`() {
+        assertThat(
+                run {
+                    "AAA"
+                }
+        ).isEqualTo("AAA")
     }
+
+    @Test
+    fun `Groovy with vs Kotlin let`() {
+        assertThat(
+                "string".let {
+                    it.length
+                }
+        ).isEqualTo(6)
+    }
+
+    @Test
+    fun `Groovy with vs Kotlin apply`() {
+        assertThat(
+                "string".apply {
+                    println(length)
+                }
+        ).isEqualTo("string")
+    }
+
+    @Test
+    fun `Groovy with vs Kotlin also`() {
+        assertThat(
+                "string".also {
+                    println(it.length)
+                }
+        ).isEqualTo("string")
+    }
+
 
 
 }
